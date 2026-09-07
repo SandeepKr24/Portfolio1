@@ -1,0 +1,13 @@
+.DS_Store
+Thumbs.db
+node_modules/
+dist/
+build/
+.cache/
+*.log
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/
+README.md
