@@ -8,7 +8,7 @@
 <script src="https://unpkg.com/lenis@1.3.26/dist/lenis.min.js"></script>
 <style>
   /* Intro overlay (see loader.js) */
-  html.dc-intro { background: #09080c; }
+  html.dc-intro { background: #1e1033; }
   html.dc-intro body > :not(#dc-intro) { visibility: hidden; }
   html.dc-intro-run #hero-title { visibility: hidden; }
   html.dc-intro-run #hero > div, html.dc-intro-reveal #hero > div { animation: none !important; }
@@ -21,11 +21,11 @@
   html.dc-intro-reveal #hero > div > :nth-child(n+6) { animation-delay: 280ms; }
   @keyframes dcIntroUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
   #dc-intro { position: fixed; inset: 0; z-index: 1000; pointer-events: none; }
-  #dc-intro .dc-intro-bg { position: absolute; inset: 0; background: #09080c; }
+  #dc-intro .dc-intro-bg { position: absolute; inset: 0; background: #1e1033; }
   #dc-intro .dc-intro-name { position: absolute; margin: 0; transform-origin: center; will-change: transform; }
   #dc-intro .dc-intro-ch { opacity: 0; }
   #dc-intro .dc-intro-caret { display: inline-block; position: relative; width: 0; }
-  #dc-intro .dc-intro-caret::after { content: ""; position: absolute; left: 0.04em; bottom: 0.08em; width: 0.06em; height: 0.8em; background: #ad83d8; animation: dcCaret 0.5s steps(1) infinite; }
+  #dc-intro .dc-intro-caret::after { content: ""; position: absolute; left: 0.04em; bottom: 0.08em; width: 0.06em; height: 0.8em; background: #ff4696; animation: dcCaret 0.5s steps(1) infinite; }
   @keyframes dcCaret { 50% { opacity: 0; } }
 </style>
 <script src="./loader.js"></script>
@@ -50,19 +50,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --bg: #09080c;
-    --bg-2: #0e0c12;
-    --card: #141219;
-    --card-2: #1b1822;
-    --line: rgba(170,162,186,0.14);
-    --line-2: rgba(170,162,186,0.30);
-    --ink: #eeebf3;
-    --ink-2: #b4aec0;
-    --ink-3: #878193;
-    --accent: #ad83d8;
-    --accent-strong: #411f63;
-    --accent-2: #c7a6ec;
-    --accent-soft: rgba(173,131,216,0.12);
+    --bg: #1e1033;
+    --bg-2: #241440;
+    --card: #29174a;
+    --card-2: #331f57;
+    --line: rgba(214,196,240,0.14);
+    --line-2: rgba(214,196,240,0.30);
+    --ink: #f7f0fb;
+    --ink-2: #cbbbdc;
+    --ink-3: #a291b8;
+    --accent: #ff4696;
+    --accent-strong: #ff4696;
+    --on-accent: #1e1033;
+    --accent-2: #ff8cbe;
+    --accent-soft: rgba(255,70,150,0.12);
     --r-sm: 8px;
     --r-md: 14px;
     --r-lg: 20px;
@@ -109,7 +110,7 @@
 </style>
 </helmet>
 
-<a href="#main" style="position: fixed; top: -60px; left: 16px; z-index: 200; padding: 10px 16px; background: var(--accent-strong); color: #ffffff; border-radius: var(--r-sm); font-weight: 600; font-size: 14px;" style-focus="top: 12px">Skip to content</a>
+<a href="#main" style="position: fixed; top: -60px; left: 16px; z-index: 200; padding: 10px 16px; background: var(--accent-strong); color: var(--on-accent); border-radius: var(--r-sm); font-weight: 600; font-size: 14px;" style-focus="top: 12px">Skip to content</a>
 
 <header style="position: fixed; top: 12px; left: 24px; right: 24px; max-width: 1180px; margin: 0 auto; z-index: 100; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); background: rgba(9,8,12,0.78); border: 1px solid var(--line); border-radius: var(--r-lg); box-shadow: 0 10px 30px rgba(0,0,0,0.35); overflow: hidden">
   <nav aria-label="Primary" style="padding: 0 12px 0 20px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 24px">
@@ -120,7 +121,7 @@
     <ul style="display: none; list-style: none; margin: 0; padding: 0; gap: 4px" class="nav-desktop">
       <sc-for list="{{ nav }}" as="n" hint-placeholder-count="7">
         <li>
-          <a href="{{ n.href }}" aria-current="{{ n.current }}" style="display: block; padding: 8px 12px; border-radius: var(--r-sm); font-size: 14px; font-weight: 500; color: {{ n.color }}; transition: color 160ms ease, background 160ms ease, box-shadow 160ms ease" style-hover="background: rgba(173,131,216,0.2); color: var(--ink); box-shadow: inset 0 0 0 1px rgba(173,131,216,0.45)">{{ n.label }}</a>
+          <a href="{{ n.href }}" aria-current="{{ n.current }}" style="display: block; padding: 8px 12px; border-radius: var(--r-sm); font-size: 14px; font-weight: 500; color: {{ n.color }}; transition: color 160ms ease, background 160ms ease, box-shadow 160ms ease" style-hover="background: rgba(255,70,150,0.2); color: var(--ink); box-shadow: inset 0 0 0 1px rgba(255,70,150,0.45)">{{ n.label }}</a>
         </li>
       </sc-for>
     </ul>
@@ -136,7 +137,7 @@
       <ul style="list-style: none; margin: 0; padding: 0; display: grid; gap: 2px">
         <sc-for list="{{ nav }}" as="n" hint-placeholder-count="7">
           <li>
-            <a href="{{ n.href }}" onClick="{{ closeMenu }}" style="display: block; padding: 13px 12px; border-radius: var(--r-sm); font-size: 16px; font-weight: 500; color: {{ n.color }}; transition: color 160ms ease, background 160ms ease, box-shadow 160ms ease" style-hover="background: rgba(173,131,216,0.2); color: var(--ink); box-shadow: inset 0 0 0 1px rgba(173,131,216,0.45)">{{ n.label }}</a>
+            <a href="{{ n.href }}" onClick="{{ closeMenu }}" style="display: block; padding: 13px 12px; border-radius: var(--r-sm); font-size: 16px; font-weight: 500; color: {{ n.color }}; transition: color 160ms ease, background 160ms ease, box-shadow 160ms ease" style-hover="background: rgba(255,70,150,0.2); color: var(--ink); box-shadow: inset 0 0 0 1px rgba(255,70,150,0.45)">{{ n.label }}</a>
           </li>
         </sc-for>
         <li style="margin-top: 8px">
@@ -150,10 +151,10 @@
 <main id="main" style="display: block">
 
   <section id="hero" aria-labelledby="hero-title" style="position: relative; overflow: hidden; padding: 150px 24px 110px; scroll-margin-top: 40px">
-    <div aria-hidden="true" style="position: absolute; inset: 0; background-image: linear-gradient(rgba(170,162,186,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(170,162,186,0.06) 1px, transparent 1px); background-size: 64px 64px; mask-image: radial-gradient(ellipse 90% 60% at 50% 20%, #000 30%, transparent 75%); -webkit-mask-image: radial-gradient(ellipse 90% 60% at 50% 20%, #000 30%, transparent 75%)"></div>
-    <div aria-hidden="true" style="position: absolute; top: -220px; left: 50%; transform: translateX(-50%); width: 900px; height: 520px; background: radial-gradient(ellipse at center, rgba(65,31,99,0.55), transparent 68%); animation: dcGlow 9s ease-in-out infinite; pointer-events: none"></div>
+    <div aria-hidden="true" style="position: absolute; inset: 0; background-image: linear-gradient(rgba(214,196,240,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(214,196,240,0.06) 1px, transparent 1px); background-size: 64px 64px; mask-image: radial-gradient(ellipse 90% 60% at 50% 20%, #000 30%, transparent 75%); -webkit-mask-image: radial-gradient(ellipse 90% 60% at 50% 20%, #000 30%, transparent 75%)"></div>
+    <div aria-hidden="true" style="position: absolute; top: -220px; left: 50%; transform: translateX(-50%); width: 900px; height: 520px; background: radial-gradient(ellipse at center, rgba(255,70,150,0.20), transparent 68%); animation: dcGlow 9s ease-in-out infinite; pointer-events: none"></div>
     <div style="position: relative; max-width: 1180px; margin: 0 auto; animation: dcFadeUp 700ms ease both">
-      <p style="display: inline-flex; align-items: flex-start; gap: 9px; margin: 0 0 26px; padding: 8px 15px; max-width: 100%; line-height: 1.45; border: 1px solid var(--line-2); border-radius: 999px; background: rgba(20,18,25,0.6); font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: var(--ink-2); letter-spacing: 0.01em">
+      <p style="display: inline-flex; align-items: flex-start; gap: 9px; margin: 0 0 26px; padding: 8px 15px; max-width: 100%; line-height: 1.45; border: 1px solid var(--line-2); border-radius: 999px; background: rgba(30,16,51,0.6); font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: var(--ink-2); letter-spacing: 0.01em">
         <span aria-hidden="true" style="flex: none; margin-top: 6px; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft)"></span>
         <span style="min-width: 0">{{ person.availability }}</span>
       </p>
@@ -162,7 +163,7 @@
       <p style="margin: 26px 0 0; max-width: 62ch; font-size: clamp(16px, 2.2vw, 19px); line-height: 1.65; color: var(--ink-2); text-wrap: pretty">I craft agentic AI that solves <em style="color: var(--ink); font-style: italic">real-world problems</em></p>
       <p style="margin: 14px 0 0; max-width: 60ch; font-size: 15.5px; line-height: 1.7; color: var(--ink-3); text-wrap: pretty">{{ person.blurb }}</p>
       <div style="margin-top: 38px; display: flex; flex-wrap: wrap; gap: 12px">
-        <a href="#projects" style="display: inline-flex; align-items: center; gap: 8px; padding: 14px 24px; min-height: 48px; border-radius: var(--r-sm); background: var(--accent-strong); color: #ffffff; border: 1px solid rgba(173,131,216,0.35); font-weight: 600; font-size: 15px; transition: transform 160ms ease, box-shadow 160ms ease" style-hover="transform: translateY(-2px); box-shadow: 0 12px 30px rgba(173,131,216,0.22); color: #ffffff">View projects <span aria-hidden="true">→</span></a>
+        <a href="#projects" style="display: inline-flex; align-items: center; gap: 8px; padding: 14px 24px; min-height: 48px; border-radius: var(--r-sm); background: var(--accent-strong); color: var(--on-accent); border: 1px solid rgba(255,70,150,0.35); font-weight: 600; font-size: 15px; transition: transform 160ms ease, box-shadow 160ms ease" style-hover="transform: translateY(-2px); box-shadow: 0 12px 30px rgba(255,70,150,0.22); color: var(--on-accent)">View projects <span aria-hidden="true">→</span></a>
         <a href="#contact" style="display: inline-flex; align-items: center; padding: 14px 24px; min-height: 48px; border-radius: var(--r-sm); border: 1px solid var(--line-2); color: var(--ink); font-weight: 600; font-size: 15px; transition: border-color 160ms ease, background 160ms ease" style-hover="border-color: var(--accent); background: var(--accent-soft); color: var(--ink)">Get in touch</a>
         <a href="{{ person.resumeUrl }}" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; padding: 14px 24px; min-height: 48px; border-radius: var(--r-sm); color: var(--ink-2); font-weight: 500; font-size: 15px" style-hover="color: var(--ink)">Résumé (PDF) <span aria-hidden="true" style="margin-left: 8px">↗</span></a>
       </div>
@@ -213,7 +214,7 @@
         <sc-for list="{{ experience }}" as="job" hint-placeholder-count="1">
           <li style="position: relative; padding-left: 34px">
             <span aria-hidden="true" style="position: absolute; left: 0; top: 34px; bottom: -18px; width: 1px; background: var(--line)"></span>
-            <span aria-hidden="true" style="position: absolute; left: -4px; top: 26px; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px rgba(173,131,216,0.16)"></span>
+            <span aria-hidden="true" style="position: absolute; left: -4px; top: 26px; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px rgba(255,70,150,0.16)"></span>
             <article style="padding: 26px; border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--card); transition: border-color 200ms ease" style-hover="border-color: var(--line-2)">
               <div style="display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: baseline; justify-content: space-between">
                 <h3 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 21px; font-weight: 600; letter-spacing: -0.02em">{{ job.role }}</h3>
@@ -249,7 +250,7 @@
         <sc-for list="{{ education }}" as="ed" hint-placeholder-count="2">
           <li style="position: relative; padding-left: 34px">
             <span aria-hidden="true" style="position: absolute; left: 0; top: 34px; bottom: -18px; width: 1px; background: var(--line)"></span>
-            <span aria-hidden="true" style="position: absolute; left: -4px; top: 26px; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px rgba(173,131,216,0.16)"></span>
+            <span aria-hidden="true" style="position: absolute; left: -4px; top: 26px; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px rgba(255,70,150,0.16)"></span>
             <article style="padding: 26px; border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--card); transition: border-color 200ms ease" style-hover="border-color: var(--line-2)">
               <div style="display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: baseline; justify-content: space-between">
                 <h3 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 21px; font-weight: 600; letter-spacing: -0.02em">{{ ed.degree }}</h3>
@@ -328,7 +329,7 @@
       <h2 id="projects-title" style="margin: 0 0 46px; font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(28px, 4.4vw, 42px); font-weight: 600; letter-spacing: -0.028em">Showcase</h2>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); column-gap: 20px; row-gap: 20px">
         <sc-for list="{{ projects }}" as="p" hint-placeholder-count="3">
-          <article style="display: grid; grid-row: span 5; grid-template-rows: subgrid; row-gap: 0; padding: 26px; border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--card); overflow: hidden; transition: border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease" style-hover="border-color: var(--line-2); transform: translateY(-4px); box-shadow: 0 18px 44px rgba(0,0,0,0.55)">
+          <article style="display: grid; grid-row: span 5; grid-template-rows: subgrid; row-gap: 0; padding: 26px; border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--card); overflow: hidden; transition: border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease" style-hover="border-color: var(--line-2); transform: translateY(-4px); box-shadow: 0 18px 44px rgba(8,3,16,0.6)">
               <div style="display: flex; align-items: baseline; gap: 12px; justify-content: space-between">
                 <h3 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 20px; font-weight: 600; letter-spacing: -0.02em">{{ p.name }}</h3>
                 <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: var(--ink-3)">{{ p.year }}</span>
@@ -405,12 +406,12 @@
   </section>
 
   <section id="contact" aria-labelledby="contact-title" style="position: relative; overflow: hidden; padding: 110px 24px; border-top: 1px solid var(--line); scroll-margin-top: 40px">
-    <div aria-hidden="true" style="position: absolute; bottom: -260px; left: 50%; transform: translateX(-50%); width: 820px; height: 460px; background: radial-gradient(ellipse at center, rgba(65,31,99,0.45), transparent 70%); pointer-events: none"></div>
+    <div aria-hidden="true" style="position: absolute; bottom: -260px; left: 50%; transform: translateX(-50%); width: 820px; height: 460px; background: radial-gradient(ellipse at center, rgba(255,70,150,0.16), transparent 70%); pointer-events: none"></div>
     <div style="position: relative; max-width: 780px; margin: 0 auto; text-align: center">
       <p style="margin: 0 0 12px; font-family: 'JetBrains Mono', monospace; font-size: 12.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent)">07 - Contact</p>
       <h2 id="contact-title" style="margin: 0 0 18px; font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(30px, 5.2vw, 50px); font-weight: 600; letter-spacing: -0.03em">Let us build something</h2>
       <p style="margin: 0 auto 34px; max-width: 52ch; font-size: 17px; line-height: 1.7; color: var(--ink-2); text-wrap: pretty">{{ person.contactNote }}</p>
-      <a href="{{ person.mailto }}" style="display: inline-flex; align-items: center; gap: 10px; padding: 16px 28px; min-height: 52px; border-radius: var(--r-sm); background: var(--accent-strong); color: #ffffff; border: 1px solid rgba(173,131,216,0.35); font-weight: 600; font-size: 16px; font-family: 'JetBrains Mono', monospace; transition: transform 160ms ease, box-shadow 160ms ease" style-hover="transform: translateY(-2px); box-shadow: 0 12px 30px rgba(173,131,216,0.22); color: #ffffff">{{ person.email }}</a>
+      <a href="{{ person.mailto }}" style="display: inline-flex; align-items: center; gap: 10px; padding: 16px 28px; min-height: 52px; border-radius: var(--r-sm); background: var(--accent-strong); color: var(--on-accent); border: 1px solid rgba(255,70,150,0.35); font-weight: 600; font-size: 16px; font-family: 'JetBrains Mono', monospace; transition: transform 160ms ease, box-shadow 160ms ease" style-hover="transform: translateY(-2px); box-shadow: 0 12px 30px rgba(255,70,150,0.22); color: var(--on-accent)">{{ person.email }}</a>
       <ul style="margin: 34px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px">
         <sc-for list="{{ socials }}" as="s" hint-placeholder-count="3">
           <li>
@@ -442,7 +443,7 @@
 </footer>
 
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;accentColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#ad83d8&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#ad83d8&quot;,&quot;#c7a6ec&quot;,&quot;#7cc5a0&quot;,&quot;#e0a45e&quot;],&quot;section&quot;:&quot;Theme&quot;},&quot;cursorDot&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Behaviour&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;accentColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#ff4696&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#ff4696&quot;,&quot;#ff8cbe&quot;,&quot;#7cc5a0&quot;,&quot;#e0a45e&quot;],&quot;section&quot;:&quot;Theme&quot;},&quot;cursorDot&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Behaviour&quot;}}">
 const ICON = (slug, color) =>
   `https://cdn.simpleicons.org/${slug}` + (color ? `/${String(color).replace("#", "")}` : "");
 
@@ -463,7 +464,7 @@ const LINKEDIN_ICON = PATH_ICON(
 const LETTER_ICON = (label, color) => {
   const raw = (label || "?").trim().charAt(0).toUpperCase();
   const ch = /^[A-Z0-9]$/.test(raw) ? raw : "?";
-  const c = /^#[0-9a-f]{3,8}$/i.test(color || "") ? color : "#ad83d8";
+  const c = /^#[0-9a-f]{3,8}$/i.test(color || "") ? color : "#ff4696";
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22"><rect x="1" y="1" width="20" height="20" rx="6" fill="${c}" fill-opacity="0.16" stroke="${c}" stroke-width="1.1"/><text x="11" y="15.2" text-anchor="middle" font-family="ui-monospace, monospace" font-weight="600" font-size="11" fill="${c}">${ch}</text></svg>`;
   return "data:image/svg+xml," + encodeURIComponent(svg);
 };
@@ -882,7 +883,7 @@ class Component extends DCLogic {
     };
 
     this.dot = mk(7, "var(--accent)", "none");
-    this.ring = mk(26, "transparent", "1px solid rgba(170,162,186,0.35)");
+    this.ring = mk(26, "transparent", "1px solid rgba(214,196,240,0.35)");
 
     const t = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
     const d = { x: t.x, y: t.y };
