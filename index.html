@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" sizes="64x64" href="data:image/png;base64,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">
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="description" content="Portfolio of Sandeep Kumar - AI/ML engineer building RAG pipelines, agentic systems and LLM applications." />
+<link rel="canonical" href="https://REPLACE-WITH-YOUR-DOMAIN.com/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Sandeep Kumar - AI/ML Engineer" />
+<meta property="og:description" content="AI/ML engineer working on RAG, agentic AI and LLM systems, with a data-science foundation." />
+<meta property="og:url" content="https://REPLACE-WITH-YOUR-DOMAIN.com/" />
+<meta property="og:image" content="https://REPLACE-WITH-YOUR-DOMAIN.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Sandeep Kumar - AI/ML Engineer" />
+<meta name="twitter:description" content="AI/ML engineer working on RAG, agentic AI and LLM systems, with a data-science foundation." />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #09080c;
+    --bg-2: #0e0c12;
+    --card: #141219;
+    --card-2: #1b1822;
+    --line: rgba(170,162,186,0.14);
+    --line-2: rgba(170,162,186,0.30);
+    --ink: #eeebf3;
+    --ink-2: #b4aec0;
+    --ink-3: #878193;
+    --accent: #ad83d8;
+    --accent-strong: #411f63;
+    --accent-2: #c7a6ec;
+    --accent-soft: rgba(173,131,216,0.12);
+    --r-sm: 8px;
+    --r-md: 14px;
+    --r-lg: 20px;
+  }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  * { box-sizing: border-box; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { color: var(--ink); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+  @keyframes dcFadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  @keyframes dcGlow { 0%, 100% { opacity: 0.55; } 50% { opacity: 0.85; } }
+  @media (min-width: 900px) {
+    .nav-desktop { display: flex !important; }
+    .resume-desktop { display: inline-flex !important; }
+    .menu-button { display: none !important; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+</helmet>
+
+<a href="#main" style="position: fixed; top: -60px; left: 16px; z-index: 200; padding: 10px 16px; background: var(--accent-strong); color: #ffffff; border-radius: var(--r-sm); font-weight: 600; font-size: 14px;" style-focus="top: 12px">Skip to content</a>
+
+<header style="position: fixed; top: 0; left: 0; right: 0; z-index: 100; backdrop-filter: blur(14px); background: rgba(9,8,12,0.82); border-bottom: 1px solid var(--line)">
+  <nav aria-label="Primary" style="max-width: 1180px; margin: 0 auto; padding: 0 24px; height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 24px">
+    <a href="#hero" style="display: flex; align-items: center; gap: 10px; color: var(--ink); font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: -0.01em">
+      <img src="data:image/png;base64,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" alt="" aria-hidden="true" width="28" height="28" style="display: block; width: 28px; height: 28px; flex: none" />
+      <span>{{ person.shortName }}</span>
+    </a>
+    <ul style="display: none; list-style: none; margin: 0; padding: 0; gap: 4px" class="nav-desktop">
+      <sc-for list="{{ nav }}" as="n" hint-placeholder-count="7">
+        <li>
+          <a href="{{ n.href }}" aria-current="{{ n.current }}" style="display: block; padding: 8px 12px; border-radius: var(--r-sm); font-size: 14px; font-weight: 500; color: {{ n.color }}; transition: color 160ms ease, background 160ms ease" style-hover="background: rgba(170,162,186,0.08)">{{ n.label }}</a>
+        </li>
+      </sc-for>
+    </ul>
+    <div style="display: flex; align-items: center; gap: 10px">
+      <a href="{{ person.resumeUrl }}" target="_blank" rel="noopener noreferrer" style="display: none; padding: 9px 16px; border-radius: var(--r-sm); border: 1px solid var(--line-2); color: var(--ink); font-size: 14px; font-weight: 500; transition: border-color 160ms ease, background 160ms ease" style-hover="border-color: var(--accent); background: var(--accent-soft)" class="resume-desktop">Résumé</a>
+      <button type="button" aria-label="Toggle navigation menu" aria-expanded="{{ menuOpen }}" aria-controls="mobile-menu" onClick="{{ toggleMenu }}" style="display: grid; place-items: center; width: 42px; height: 42px; border-radius: var(--r-sm); border: 1px solid var(--line-2); background: transparent; color: var(--ink); cursor: pointer" class="menu-button">
+        <span aria-hidden="true" style="font-family: 'JetBrains Mono', monospace; font-size: 16px; line-height: 1">{{ menuGlyph }}</span>
+      </button>
+    </div>
+  </nav>
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <div id="mobile-menu" style="border-top: 1px solid var(--line); background: var(--bg-2); padding: 10px 16px 18px">
+      <ul style="list-style: none; margin: 0; padding: 0; display: grid; gap: 2px">
+        <sc-for list="{{ nav }}" as="n" hint-placeholder-count="7">
+          <li>
+            <a href="{{ n.href }}" onClick="{{ closeMenu }}" style="display: block; padding: 13px 12px; border-radius: var(--r-sm); font-size: 16px; font-weight: 500; color: {{ n.color }}" style-hover="background: rgba(170,162,186,0.08)">{{ n.label }}</a>
+          </li>
+        </sc-for>
+        <li style="margin-top: 8px">
+          <a href="{{ person.resumeUrl }}" target="_blank" rel="noopener noreferrer" onClick="{{ closeMenu }}" style="display: block; padding: 13px 12px; border-radius: var(--r-sm); border: 1px solid var(--line-2); text-align: center; color: var(--ink); font-weight: 500">Résumé (PDF)</a>
+        </li>
+      </ul>
+    </div>
+  </sc-if>
+</header>
+
+<main id="main" style="display: block">
+
+  <section id="hero" aria-labelledby="hero-title" style="position: relative; overflow: hidden; padding: 150px 24px 110px; scroll-margin-top: 76px">
+    <div aria-hidden="true" style="position: absolute; inset: 0; background-image: linear-gradient(rgba(170,162,186,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(170,162,186,0.06) 1px, transparent 1px); background-size: 64px 64px; mask-image: radial-gradient(ellipse 90% 60% at 50% 20%, #000 30%, transparent 75%); -webkit-mask-image: radial-gradient(ellipse 90% 60% at 50% 20%, #000 30%, transparent 75%)"></div>
+    <div aria-hidden="true" style="position: absolute; top: -220px; left: 50%; transform: translateX(-50%); width: 900px; height: 520px; background: radial-gradient(ellipse at center, rgba(65,31,99,0.55), transparent 68%); animation: dcGlow 9s ease-in-out infinite; pointer-events: none"></div>
+    <div style="position: relative; max-width: 1180px; margin: 0 auto; animation: dcFadeUp 700ms ease both">
+      <p style="display: inline-flex; align-items: flex-start; gap: 9px; margin: 0 0 26px; padding: 8px 15px; max-width: 100%; line-height: 1.45; border: 1px solid var(--line-2); border-radius: 999px; background: rgba(20,18,25,0.6); font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: var(--ink-2); letter-spacing: 0.01em">
+        <span aria-hidden="true" style="flex: none; margin-top: 6px; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft)"></span>
+        <span style="min-width: 0">{{ person.availability }}</span>
+      </p>
+      <h1 id="hero-title" style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(40px, 8.2vw, 82px); line-height: 1.02; letter-spacing: -0.035em; max-width: 15ch; text-wrap: balance">{{ person.name }}</h1>
+      <p style="margin: 18px 0 0; font-family: 'JetBrains Mono', monospace; font-size: clamp(14px, 2.4vw, 18px); color: var(--accent); letter-spacing: -0.01em">{{ person.title }}</p>
+      <p style="margin: 26px 0 0; max-width: 62ch; font-size: clamp(16px, 2.2vw, 19px); line-height: 1.65; color: var(--ink-2); text-wrap: pretty">I craft agentic AI that solves <em style="color: var(--ink); font-style: italic">real-world problems</em></p>
+      <p style="margin: 14px 0 0; max-width: 60ch; font-size: 15.5px; line-height: 1.7; color: var(--ink-3); text-wrap: pretty">{{ person.blurb }}</p>
+      <div style="margin-top: 38px; display: flex; flex-wrap: wrap; gap: 12px">
+        <a href="#projects" style="display: inline-flex; align-items: center; gap: 8px; padding: 14px 24px; min-height: 48px; border-radius: var(--r-sm); background: var(--accent-strong); color: #ffffff; border: 1px solid rgba(173,131,216,0.35); font-weight: 600; font-size: 15px; transition: transform 160ms ease, box-shadow 160ms ease" style-hover="transform: translateY(-2px); box-shadow: 0 12px 30px rgba(173,131,216,0.22); color: #ffffff">View projects <span aria-hidden="true">→</span></a>
+        <a href="#contact" style="display: inline-flex; align-items: center; padding: 14px 24px; min-height: 48px; border-radius: var(--r-sm); border: 1px solid var(--line-2); color: var(--ink); font-weight: 600; font-size: 15px; transition: border-color 160ms ease, background 160ms ease" style-hover="border-color: var(--accent); background: var(--accent-soft); color: var(--ink)">Get in touch</a>
+        <a href="{{ person.resumeUrl }}" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; padding: 14px 24px; min-height: 48px; border-radius: var(--r-sm); color: var(--ink-2); font-weight: 500; font-size: 15px" style-hover="color: var(--ink)">Résumé (PDF) <span aria-hidden="true" style="margin-left: 8px">↗</span></a>
+      </div>
+      <ul style="margin: 40px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 10px">
+        <sc-for list="{{ socials }}" as="s" hint-placeholder-count="3">
+          <li>
+            <a href="{{ s.href }}" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 9px; padding: 10px 15px; min-height: 44px; border: 1px solid var(--line); border-radius: var(--r-sm); background: var(--card); color: var(--ink-2); font-size: 14px; font-family: 'JetBrains Mono', monospace; transition: border-color 160ms ease, color 160ms ease" style-hover="border-color: var(--line-2); color: var(--ink)">
+              <img src="{{ s.icon }}" data-label="{{ s.label }}" alt="" aria-hidden="true" width="15" height="15" loading="lazy" decoding="async" onError="{{ hideIcon }}" style="filter: brightness(0) invert(1) drop-shadow(0 0 0.5px rgba(0,0,0,0.35))" />
+              {{ s.label }}
+            </a>
+          </li>
+        </sc-for>
+      </ul>
+    </div>
+  </section>
+
+  <section id="about" aria-labelledby="about-title" style="padding: 96px 24px; border-top: 1px solid var(--line); scroll-margin-top: 76px">
+    <div style="max-width: 1180px; margin: 0 auto">
+      <p style="margin: 0 0 12px; font-family: 'JetBrains Mono', monospace; font-size: 12.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent)">01 - About</p>
+      <h2 id="about-title" style="margin: 0 0 46px; font-family: 'Space Grotesk', sans-serif; font-size: clamp(28px, 4.4vw, 42px); font-weight: 600; letter-spacing: -0.028em; max-width: 22ch">Background</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: stretch">
+        <div style="flex: 1 1 340px; max-width: 520px; min-width: 0; display: grid; gap: 18px; align-content: start">
+          <sc-for list="{{ about.paragraphs }}" as="p" hint-placeholder-count="3">
+            <p style="margin: 0; font-size: 16.5px; line-height: 1.75; color: var(--ink-2); text-wrap: pretty">{{ p }}</p>
+          </sc-for>
+        </div>
+        <div style="flex: 1 1 380px; min-width: 0; display: grid; gap: 14px; align-content: space-between">
+          <sc-for list="{{ about.panels }}" as="panel" hint-placeholder-count="3">
+            <div style="padding: 18px 20px; border: 1px solid var(--line); border-radius: var(--r-md); background: linear-gradient(180deg, var(--card-2), var(--card))">
+              <h3 style="margin: 0 0 14px; font-family: 'JetBrains Mono', monospace; font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); font-weight: 500">{{ panel.label }}</h3>
+              <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px">
+                <sc-for list="{{ panel.items }}" as="item" hint-placeholder-count="4">
+                  <li style="padding: 6px 11px; border: 1px solid var(--line); border-radius: 999px; font-size: 13.5px; color: var(--ink-2)">{{ item }}</li>
+                </sc-for>
+              </ul>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" aria-labelledby="education-title" style="padding: 96px 24px; border-top: 1px solid var(--line); background: var(--bg-2); scroll-margin-top: 76px">
+    <div style="max-width: 1180px; margin: 0 auto">
+      <p style="margin: 0 0 12px; font-family: 'JetBrains Mono', monospace; font-size: 12.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent)">02 - Education</p>
+      <h2 id="education-title" style="margin: 0 0 46px; font-family: 'Space Grotesk', sans-serif; font-size: clamp(28px, 4.4vw, 42px); font-weight: 600; letter-spacing: -0.028em">Studies &amp; coursework</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 20px">
+        <sc-for list="{{ education }}" as="ed" hint-placeholder-count="2">
+          <article style="padding: 28px; border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--card); transition: border-color 200ms ease, transform 200ms ease" style-hover="border-color: var(--line-2); transform: translateY(-3px)">
+            <p style="margin: 0 0 10px; font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: var(--accent)">{{ ed.dates }}</p>
+            <h3 style="margin: 0 0 6px; font-family: 'Space Grotesk', sans-serif; font-size: 21px; font-weight: 600; letter-spacing: -0.02em">{{ ed.degree }}</h3>
+            <p style="margin: 0 0 4px; font-size: 15.5px; color: var(--ink-2)">{{ ed.institution }}</p>
+            <p style="margin: 0 0 18px; font-size: 14px; color: var(--ink-3)">{{ ed.meta }}</p>
+            <h4 style="margin: 0 0 10px; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); font-weight: 500">Relevant coursework</h4>
+            <ul style="margin: 0 0 18px; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 7px">
+              <sc-for list="{{ ed.coursework }}" as="c" hint-placeholder-count="4">
+                <li style="padding: 5px 10px; border-radius: var(--r-sm); background: rgba(170,162,186,0.08); font-size: 13px; color: var(--ink-2)">{{ c }}</li>
+              </sc-for>
+            </ul>
+            <ul style="margin: 0; padding: 0; list-style: none; display: grid; gap: 8px">
+              <sc-for list="{{ ed.achievements }}" as="a" hint-placeholder-count="2">
+                <li style="display: flex; gap: 10px; font-size: 14.5px; line-height: 1.6; color: var(--ink-2)">
+                  <span aria-hidden="true" style="color: var(--accent); font-family: 'JetBrains Mono', monospace">·</span>
+                  <span>{{ a }}</span>
+                </li>
+              </sc-for>
+            </ul>
+          </article>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" aria-labelledby="skills-title" style="padding: 96px 24px; border-top: 1px solid var(--line); scroll-margin-top: 76px">
+    <div style="max-width: 1180px; margin: 0 auto">
+      <p style="margin: 0 0 12px; font-family: 'JetBrains Mono', monospace; font-size: 12.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent)">03 - Skills</p>
+      <h2 id="skills-title" style="margin: 0 0 30px; font-family: 'Space Grotesk', sans-serif; font-size: clamp(28px, 4.4vw, 42px); font-weight: 600; letter-spacing: -0.028em">Technologies</h2>
+      <div style="display: grid; gap: 34px">
+        <sc-for list="{{ skillGroups }}" as="group" hint-placeholder-count="4">
+          <div>
+            <div style="display: flex; align-items: baseline; gap: 14px; margin-bottom: 16px">
+              <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 600; letter-spacing: -0.01em">{{ group.name }}</h3>
+              <span aria-hidden="true" style="flex: 1; height: 1px; background: var(--line)"></span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--ink-3)">{{ group.count }}</span>
+            </div>
+            <ul style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr)); gap: 12px">
+              <sc-for list="{{ group.items }}" as="t" hint-placeholder-count="5">
+                <li style="display: flex; align-items: center; gap: 13px; padding: 14px 16px; border: 1px solid var(--line); border-radius: var(--r-md); background: var(--card); transition: border-color 180ms ease, background 180ms ease, transform 180ms ease" style-hover="border-color: var(--line-2); background: var(--card-2); transform: translateY(-2px)">
+                  <img src="{{ t.icon }}" data-label="{{ t.name }}" data-fallback="{{ t.fallback }}" alt="" aria-hidden="true" width="22" height="22" loading="lazy" decoding="async" onError="{{ hideIcon }}" style="flex: none" />
+                  <span style="display: grid; gap: 2px; min-width: 0">
+                    <span style="font-size: 14.5px; font-weight: 500; color: var(--ink)">{{ t.name }}</span>
+                    <span style="font-size: 12.5px; color: var(--ink-3)">{{ t.note }}</span>
+                  </span>
+                </li>
+              </sc-for>
+            </ul>
+          </div>
+        </sc-for>
+
+        <div>
+          <div style="display: flex; align-items: baseline; gap: 14px; margin-bottom: 16px">
+            <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 600; letter-spacing: -0.01em">Techniques</h3>
+            <span aria-hidden="true" style="flex: 1; height: 1px; background: var(--line)"></span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--ink-3)">{{ techniqueCount }}</span>
+          </div>
+          <ul style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr)); gap: 12px">
+            <sc-for list="{{ techniques }}" as="t" hint-placeholder-count="8">
+              <li style="display: grid; gap: 3px; padding: 14px 16px; border: 1px solid var(--line); border-left: 2px solid var(--accent); border-radius: var(--r-md); background: var(--card); transition: border-color 180ms ease, background 180ms ease, transform 180ms ease" style-hover="background: var(--card-2); transform: translateY(-2px)">
+                <span style="font-size: 14.5px; font-weight: 500; color: var(--ink)">{{ t.name }}</span>
+                <span style="font-size: 12.5px; color: var(--ink-3)">{{ t.note }}</span>
+              </li>
+            </sc-for>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" aria-labelledby="experience-title" style="padding: 96px 24px; border-top: 1px solid var(--line); background: var(--bg-2); scroll-margin-top: 76px">
+    <div style="max-width: 1180px; margin: 0 auto">
+      <p style="margin: 0 0 12px; font-family: 'JetBrains Mono', monospace; font-size: 12.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent)">04 - Experience</p>
+      <h2 id="experience-title" style="margin: 0 0 46px; font-family: 'Space Grotesk', sans-serif; font-size: clamp(28px, 4.4vw, 42px); font-weight: 600; letter-spacing: -0.028em">Where I have worked</h2>
+      <ol style="margin: 0; padding: 0; list-style: none; display: grid; gap: 18px">
+        <sc-for list="{{ experience }}" as="job" hint-placeholder-count="1">
+          <li style="position: relative; padding-left: 34px">
+            <span aria-hidden="true" style="position: absolute; left: 0; top: 34px; bottom: -18px; width: 1px; background: var(--line)"></span>
+            <span aria-hidden="true" style="position: absolute; left: -4px; top: 26px; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px rgba(173,131,216,0.16)"></span>
+            <article style="padding: 26px; border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--card); transition: border-color 200ms ease" style-hover="border-color: var(--line-2)">
+              <div style="display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: baseline; justify-content: space-between">
+                <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 21px; font-weight: 600; letter-spacing: -0.02em">{{ job.role }}</h3>
+                <p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: var(--ink-3)">{{ job.period }}</p>
+              </div>
+              <p style="margin: 8px 0 16px; font-size: 15px; color: var(--accent)">{{ job.company }} <span style="color: var(--ink-3)">· {{ job.location }}</span></p>
+              <p style="margin: 0 0 16px; max-width: 78ch; font-size: 15.5px; line-height: 1.7; color: var(--ink-2); text-wrap: pretty">{{ job.summary }}</p>
+              <ul style="margin: 0 0 18px; padding: 0; list-style: none; display: grid; gap: 9px">
+                <sc-for list="{{ job.highlights }}" as="h" hint-placeholder-count="3">
+                  <li style="display: flex; gap: 11px; max-width: 82ch; font-size: 15px; line-height: 1.65; color: var(--ink-2)">
+                    <span aria-hidden="true" style="flex: none; margin-top: 7px; width: 5px; height: 5px; border-radius: 50%; background: var(--accent-2)"></span>
+                    <span>{{ h }}</span>
+                  </li>
+                </sc-for>
+              </ul>
+              <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 7px">
+                <sc-for list="{{ job.stack }}" as="s" hint-placeholder-count="4">
+                  <li style="padding: 5px 10px; border: 1px solid var(--line); border-radius: var(--r-sm); font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--ink-3)">{{ s }}</li>
+                </sc-for>
+              </ul>
+            </article>
+          </li>
+        </sc-for>
+      </ol>
+    </div>
+  </section>
+
+  <section id="projects" aria-labelledby="projects-title" style="padding: 96px 24px; border-top: 1px solid var(--line); scroll-margin-top: 76px">
+    <div style="max-width: 1180px; margin: 0 auto">
+      <p style="margin: 0 0 12px; font-family: 'JetBrains Mono', monospace; font-size: 12.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent)">05 - Projects</p>
+      <h2 id="projects-title" style="margin: 0 0 46px; font-family: 'Space Grotesk', sans-serif; font-size: clamp(28px, 4.4vw, 42px); font-weight: 600; letter-spacing: -0.028em">Showcase</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); column-gap: 20px; row-gap: 20px">
+        <sc-for list="{{ projects }}" as="p" hint-placeholder-count="3">
+          <article style="display: grid; grid-row: span 5; grid-template-rows: subgrid; row-gap: 0; padding: 26px; border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--card); overflow: hidden; transition: border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease" style-hover="border-color: var(--line-2); transform: translateY(-4px); box-shadow: 0 18px 44px rgba(0,0,0,0.55)">
+              <div style="display: flex; align-items: baseline; gap: 12px; justify-content: space-between">
+                <h3 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600; letter-spacing: -0.02em">{{ p.name }}</h3>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: var(--ink-3)">{{ p.year }}</span>
+              </div>
+              <p style="margin: 10px 0 0; padding-bottom: 16px; font-size: 15px; line-height: 1.7; color: var(--ink-2); text-wrap: pretty">{{ p.description }}</p>
+              <ul style="margin: 0; padding: 0 0 18px; list-style: none; display: grid; align-content: start; gap: 8px">
+                <sc-for list="{{ p.features }}" as="f" hint-placeholder-count="3">
+                  <li style="display: flex; gap: 10px; font-size: 14.5px; line-height: 1.6; color: var(--ink-2)">
+                    <span aria-hidden="true" style="color: var(--accent); font-family: 'JetBrains Mono', monospace; font-size: 13px">▸</span>
+                    <span>{{ f }}</span>
+                  </li>
+                </sc-for>
+              </ul>
+              <ul style="margin: 0; padding: 0 0 20px; list-style: none; display: flex; flex-wrap: wrap; align-content: flex-start; gap: 7px">
+                <sc-for list="{{ p.stack }}" as="s" hint-placeholder-count="4">
+                  <li style="padding: 5px 10px; border: 1px solid var(--line); border-radius: var(--r-sm); font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--ink-3)">{{ s }}</li>
+                </sc-for>
+              </ul>
+              <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 8px; padding-top: 4px">
+                <sc-for list="{{ p.links }}" as="l" hint-placeholder-count="2">
+                  <a href="{{ l.href }}" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 7px; padding: 10px 14px; min-height: 44px; border: 1px solid var(--line-2); border-radius: var(--r-sm); font-size: 13.5px; font-weight: 500; color: var(--ink); transition: border-color 160ms ease, background 160ms ease" style-hover="border-color: var(--accent); background: var(--accent-soft); color: var(--ink)">{{ l.label }} <span aria-hidden="true">↗</span></a>
+                </sc-for>
+              </div>
+          </article>
+        </sc-for>
+      </div>
+
+      <div style="display: flex; align-items: baseline; gap: 14px; margin: 44px 0 16px">
+        <h3 style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); font-weight: 500">Also built</h3>
+        <span aria-hidden="true" style="flex: 1; height: 1px; background: var(--line)"></span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr)); column-gap: 16px; row-gap: 16px">
+        <sc-for list="{{ secondaryProjects }}" as="p" hint-placeholder-count="3">
+          <article style="display: grid; grid-row: span 4; grid-template-rows: subgrid; row-gap: 0; padding: 22px; border: 1px solid var(--line); border-radius: var(--r-md); background: var(--card); transition: border-color 200ms ease, transform 200ms ease" style-hover="border-color: var(--line-2); transform: translateY(-3px)">
+            <div style="display: flex; align-items: baseline; gap: 10px; justify-content: space-between">
+              <h4 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 600; line-height: 1.3; letter-spacing: -0.015em">{{ p.name }}</h4>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: var(--ink-3)">{{ p.year }}</span>
+            </div>
+            <p style="margin: 10px 0 0; padding-bottom: 16px; font-size: 14.5px; line-height: 1.65; color: var(--ink-2); text-wrap: pretty">{{ p.description }}</p>
+            <ul style="margin: 0; padding: 0 0 16px; list-style: none; display: flex; flex-wrap: wrap; align-content: flex-start; gap: 6px">
+              <sc-for list="{{ p.stack }}" as="s" hint-placeholder-count="4">
+                <li style="padding: 4px 9px; border: 1px solid var(--line); border-radius: var(--r-sm); font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: var(--ink-3)">{{ s }}</li>
+              </sc-for>
+            </ul>
+            <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 8px">
+              <sc-for list="{{ p.links }}" as="l" hint-placeholder-count="1">
+                <a href="{{ l.href }}" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 6px; padding: 9px 13px; min-height: 44px; border: 1px solid var(--line-2); border-radius: var(--r-sm); font-size: 13px; font-weight: 500; color: var(--ink)" style-hover="border-color: var(--accent); background: var(--accent-soft); color: var(--ink)">{{ l.label }} <span aria-hidden="true">↗</span></a>
+              </sc-for>
+            </div>
+          </article>
+        </sc-for>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="achievements" aria-labelledby="achievements-title" style="padding: 96px 24px; border-top: 1px solid var(--line); background: var(--bg-2); scroll-margin-top: 76px">
+    <div style="max-width: 1180px; margin: 0 auto">
+      <p style="margin: 0 0 12px; font-family: 'JetBrains Mono', monospace; font-size: 12.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent)">06 - Achievements</p>
+      <h2 id="achievements-title" style="margin: 0 0 46px; font-family: 'Space Grotesk', sans-serif; font-size: clamp(28px, 4.4vw, 42px); font-weight: 600; letter-spacing: -0.028em">Certifications &amp; recognition</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); gap: 16px">
+        <sc-for list="{{ achievements }}" as="a" hint-placeholder-count="6">
+          <article style="display: flex; flex-direction: column; padding: 22px; border: 1px solid var(--line); border-radius: var(--r-md); background: var(--card); transition: border-color 180ms ease" style-hover="border-color: var(--line-2)">
+            <p style="margin: 0 0 12px; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent)">{{ a.kind }}</p>
+            <h3 style="margin: 0 0 8px; font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 600; line-height: 1.35; letter-spacing: -0.015em">{{ a.title }}</h3>
+            <p style="margin: 0; font-size: 14px; line-height: 1.6; color: var(--ink-3)">{{ a.detail }}</p>
+            <sc-if value="{{ a.href }}" hint-placeholder-val="{{ false }}">
+              <a href="{{ a.href }}" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; min-height: 44px; font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: var(--ink-2)" style-hover="color: var(--accent)">View credential <span aria-hidden="true">↗</span></a>
+            </sc-if>
+          </article>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" aria-labelledby="contact-title" style="position: relative; overflow: hidden; padding: 110px 24px; border-top: 1px solid var(--line); scroll-margin-top: 76px">
+    <div aria-hidden="true" style="position: absolute; bottom: -260px; left: 50%; transform: translateX(-50%); width: 820px; height: 460px; background: radial-gradient(ellipse at center, rgba(65,31,99,0.45), transparent 70%); pointer-events: none"></div>
+    <div style="position: relative; max-width: 780px; margin: 0 auto; text-align: center">
+      <p style="margin: 0 0 12px; font-family: 'JetBrains Mono', monospace; font-size: 12.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent)">07 - Contact</p>
+      <h2 id="contact-title" style="margin: 0 0 18px; font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 5.2vw, 50px); font-weight: 600; letter-spacing: -0.03em">Let us build something</h2>
+      <p style="margin: 0 auto 34px; max-width: 52ch; font-size: 17px; line-height: 1.7; color: var(--ink-2); text-wrap: pretty">{{ person.contactNote }}</p>
+      <a href="{{ person.mailto }}" style="display: inline-flex; align-items: center; gap: 10px; padding: 16px 28px; min-height: 52px; border-radius: var(--r-sm); background: var(--accent-strong); color: #ffffff; border: 1px solid rgba(173,131,216,0.35); font-weight: 600; font-size: 16px; font-family: 'JetBrains Mono', monospace; transition: transform 160ms ease, box-shadow 160ms ease" style-hover="transform: translateY(-2px); box-shadow: 0 12px 30px rgba(173,131,216,0.22); color: #ffffff">{{ person.email }}</a>
+      <ul style="margin: 34px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px">
+        <sc-for list="{{ socials }}" as="s" hint-placeholder-count="3">
+          <li>
+            <a href="{{ s.href }}" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 9px; padding: 11px 16px; min-height: 44px; border: 1px solid var(--line); border-radius: var(--r-sm); background: var(--card); color: var(--ink-2); font-size: 14px; transition: border-color 160ms ease, color 160ms ease" style-hover="border-color: var(--line-2); color: var(--ink)">
+              <img src="{{ s.icon }}" data-label="{{ s.label }}" alt="" aria-hidden="true" width="15" height="15" loading="lazy" decoding="async" onError="{{ hideIcon }}" style="filter: brightness(0) invert(1) drop-shadow(0 0 0.5px rgba(0,0,0,0.35))" />
+              {{ s.label }}
+            </a>
+          </li>
+        </sc-for>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer style="padding: 40px 24px; border-top: 1px solid var(--line); background: var(--bg-2)">
+  <div style="max-width: 1180px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between">
+    <div>
+      <p style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 600">{{ person.name }}</p>
+      <p style="margin: 5px 0 0; font-size: 14px; color: var(--ink-3)">{{ person.tagline }}</p>
+    </div>
+    <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 18px">
+      <sc-for list="{{ socials }}" as="s" hint-placeholder-count="3">
+        <li><a href="{{ s.href }}" target="_blank" rel="noopener noreferrer" style="font-size: 14px; color: var(--ink-2)" style-hover="color: var(--accent)">{{ s.label }}</a></li>
+      </sc-for>
+      <li><a href="#hero" style="font-size: 14px; color: var(--ink-2)" style-hover="color: var(--accent)">Back to top ↑</a></li>
+    </ul>
+    <p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: var(--ink-3)">{{ copyright }}</p>
+  </div>
+</footer>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accentColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#ad83d8&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#ad83d8&quot;,&quot;#c7a6ec&quot;,&quot;#7cc5a0&quot;,&quot;#e0a45e&quot;],&quot;section&quot;:&quot;Theme&quot;},&quot;cursorDot&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Behaviour&quot;}}">
+const ICON = (slug, color) =>
+  `https://cdn.simpleicons.org/${slug}` + (color ? `/${String(color).replace("#", "")}` : "");
+
+const PATH_ICON = (d) =>
+  "data:image/svg+xml," +
+  encodeURIComponent(
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#e8eef7"><path d="${d}"/></svg>`
+  );
+
+const GITHUB_ICON = PATH_ICON(
+  "M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+);
+
+const LINKEDIN_ICON = PATH_ICON(
+  "M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"
+);
+
+const LETTER_ICON = (label, color) => {
+  const raw = (label || "?").trim().charAt(0).toUpperCase();
+  const ch = /^[A-Z0-9]$/.test(raw) ? raw : "?";
+  const c = /^#[0-9a-f]{3,8}$/i.test(color || "") ? color : "#ad83d8";
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22"><rect x="1" y="1" width="20" height="20" rx="6" fill="${c}" fill-opacity="0.16" stroke="${c}" stroke-width="1.1"/><text x="11" y="15.2" text-anchor="middle" font-family="ui-monospace, monospace" font-weight="600" font-size="11" fill="${c}">${ch}</text></svg>`;
+  return "data:image/svg+xml," + encodeURIComponent(svg);
+};
+
+const AWS_ICON = "data:image/svg+xml," + encodeURIComponent("<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 128 128\"><path fill=\"#e8eef7\" d=\"M36.379 53.64c0 1.56.168 2.825.465 3.75.336.926.758 1.938 1.347 3.032.207.336.293.672.293.969 0 .418-.254.84-.8 1.261l-2.653 1.77c-.379.25-.758.379-1.093.379-.422 0-.844-.211-1.266-.59a13.28 13.28 0 0 1-1.516-1.98 34.153 34.153 0 0 1-1.304-2.485c-3.282 3.875-7.41 5.813-12.38 5.813-3.535 0-6.355-1.012-8.421-3.032-2.063-2.023-3.114-4.718-3.114-8.086 0-3.578 1.262-6.484 3.833-8.671 2.566-2.192 5.976-3.286 10.316-3.286 1.43 0 2.902.125 4.46.336 1.56.211 3.161.547 4.845.926v-3.074c0-3.2-.676-5.43-1.98-6.734C26.061 32.633 23.788 32 20.546 32c-1.473 0-2.988.168-4.547.547a33.416 33.416 0 0 0-4.547 1.433c-.676.293-1.18.461-1.473.547-.296.082-.507.125-.675.125-.59 0-.883-.422-.883-1.304v-2.063c0-.676.082-1.18.293-1.476.21-.293.59-.586 1.18-.883 1.472-.758 3.242-1.39 5.304-1.895 2.063-.547 4.254-.8 6.57-.8 5.008 0 8.672 1.136 11.032 3.41 2.316 2.273 3.492 5.726 3.492 10.359v13.64Zm-17.094 6.403c1.387 0 2.82-.254 4.336-.758 1.516-.508 2.863-1.433 4-2.695.672-.8 1.18-1.684 1.43-2.695.254-1.012.422-2.23.422-3.665v-1.765a34.401 34.401 0 0 0-3.871-.719 31.816 31.816 0 0 0-3.961-.25c-2.82 0-4.883.547-6.274 1.684-1.387 1.136-2.062 2.734-2.062 4.84 0 1.98.504 3.453 1.558 4.464 1.012 1.051 2.485 1.559 4.422 1.559Zm33.809 4.547c-.758 0-1.262-.125-1.598-.422-.34-.254-.633-.84-.887-1.64L40.715 29.98c-.25-.843-.38-1.39-.38-1.687 0-.672.337-1.05 1.013-1.05h4.125c.8 0 1.347.124 1.644.421.336.25.59.84.84 1.64l7.074 27.876 6.57-27.875c.208-.84.462-1.39.797-1.64.34-.255.93-.423 1.688-.423h3.367c.8 0 1.348.125 1.684.422.336.25.633.84.8 1.64l6.653 28.212 7.285-28.211c.25-.84.547-1.39.84-1.64.336-.255.887-.423 1.644-.423h3.914c.676 0 1.055.336 1.055 1.051 0 .21-.043.422-.086.676-.043.254-.125.59-.293 1.05L80.801 62.57c-.254.84-.547 1.387-.887 1.64-.336.255-.883.423-1.598.423h-3.62c-.801 0-1.348-.13-1.684-.422-.34-.297-.633-.844-.801-1.684l-6.527-27.16-6.485 27.117c-.21.844-.46 1.391-.8 1.684-.337.297-.926.422-1.684.422Zm54.105 1.137c-2.187 0-4.379-.254-6.484-.758-2.106-.504-3.746-1.055-4.84-1.684-.676-.379-1.137-.8-1.305-1.18a2.919 2.919 0 0 1-.254-1.18v-2.148c0-.882.336-1.304.97-1.304.25 0 .503.043.757.129.25.082.629.25 1.05.418a23.102 23.102 0 0 0 4.634 1.476c1.683.336 3.324.504 5.011.504 2.653 0 4.715-.465 6.145-1.39 1.433-.926 2.191-2.274 2.191-4 0-1.18-.379-2.145-1.136-2.946-.758-.8-2.192-1.516-4.254-2.191l-6.106-1.895c-3.074-.969-5.348-2.398-6.734-4.293-1.39-1.855-2.106-3.918-2.106-6.105 0-1.77.38-3.328 1.137-4.676a10.829 10.829 0 0 1 3.031-3.453c1.262-.965 2.696-1.684 4.38-2.188 1.683-.504 3.452-.715 5.304-.715.926 0 1.894.043 2.82.168.969.125 1.852.293 2.738.461.84.211 1.641.422 2.399.676.758.254 1.348.504 1.77.758.59.336 1.011.672 1.261 1.05.254.34.379.802.379 1.391v1.98c0 .884-.336 1.348-.969 1.348-.336 0-.883-.171-1.597-.507-2.403-1.094-5.098-1.641-8.086-1.641-2.399 0-4.293.379-5.598 1.18-1.309.797-1.98 2.02-1.98 3.746 0 1.18.421 2.191 1.261 2.988.844.8 2.403 1.602 4.633 2.316l5.98 1.895c3.032.969 5.22 2.316 6.524 4.043 1.305 1.727 1.938 3.707 1.938 5.895 0 1.812-.38 3.453-1.094 4.882-.758 1.434-1.77 2.696-3.074 3.707-1.305 1.051-2.864 1.809-4.672 2.36-1.895.586-3.875.883-6.024.883Z\"/><path fill=\"#f90\" d=\"M118 73.348c-4.432.063-9.664 1.052-13.621 3.832-1.223.883-1.012 2.062.336 1.894 4.508-.547 14.44-1.726 16.21.547 1.77 2.23-1.976 11.62-3.663 15.79-.504 1.26.59 1.769 1.726.8 7.41-6.231 9.348-19.242 7.832-21.137-.757-.925-4.388-1.79-8.82-1.726zM1.63 75.859c-.927.116-1.347 1.236-.368 2.121 16.508 14.902 38.359 23.872 62.613 23.872 17.305 0 37.43-5.43 51.281-15.66 2.273-1.688.297-4.254-2.02-3.204-15.534 6.57-32.421 9.77-47.788 9.77-22.778 0-44.8-6.273-62.653-16.633-.39-.231-.755-.304-1.064-.266z\"/></svg>");
+
+const PINECONE_ICON = "data:image/svg+xml," + encodeURIComponent("<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 288\"><path fill=\"#3ecf8e\" d=\"M108.633615,254.43629 C117.713862,254.43629 125.074857,261.797284 125.074857,270.877532 C125.074857,279.957779 117.713862,287.318774 108.633615,287.318774 C99.5533677,287.318774 92.1923728,279.957779 92.1923728,270.877532 C92.1923728,261.797284 99.5533677,254.43629 108.633615,254.43629 Z M199.849665,224.438339 L216.09705,229.252379 L203.199913,272.780219 C202.072982,276.58361 198.458049,279.095992 194.500389,278.826397 L190.516677,278.552973 L190.419263,278.633409 L149.02918,275.728903 L150.180842,258.822508 L177.989056,260.709686 L159.783784,234.447622 L173.709616,224.792379 L191.938895,251.08702 L199.849665,224.438339 Z M23.0126771,194.347476 L39.9158866,195.544979 L37.935897,223.348728 L64.1501315,205.120082 L73.8271476,219.030793 L47.578736,237.278394 L74.3707554,245.173037 L69.5818063,261.427835 L25.8485266,248.543243 C22.0304448,247.418369 19.5101155,243.787479 19.7913963,239.817092 L23.0126771,194.347476 Z M132.151306,170.671396 L162.658679,207.503468 L148.909247,218.891886 L130.753266,196.972134 L124.866941,230.673893 L107.280249,227.599613 L113.172232,193.845272 L88.7296311,208.256891 L79.6674587,192.874434 L120.745504,168.674377 C124.522104,166.449492 129.355297,167.295726 132.151306,170.671396 Z M217.504528,145.960198 L232.744017,137.668804 L254.94482,178.473633 C256.889641,182.048192 256.088221,186.494171 253.017682,189.164674 L249.876622,191.878375 L217.826246,219.77131 L206.441034,206.680621 L227.988588,187.934494 L195.893546,182.152609 L198.972402,165.078949 L231.044844,170.857793 L217.504528,145.960198 Z M37.7821805,103.299272 L49.2622123,116.306888 L28.0106317,135.050179 L60.1668233,140.664193 L57.1863573,157.755303 L24.9947229,152.136967 L38.822104,177.134576 L23.6411026,185.532577 L1.08439616,144.756992 C-0.885025494,141.196884 -0.115545265,136.746375 2.93488097,134.054184 L37.7821805,103.299272 Z M146.476311,89.8796828 L176.88045,126.612847 L163.1271,137.996532 L144.975445,116.067101 L139.08912,149.778947 L121.502428,146.704666 L127.374238,113.081452 L103.025237,127.354817 L93.9976317,111.952048 L131.398812,90.0233663 L131.435631,89.880899 L131.600545,89.9023265 L135.085833,87.870141 C138.861877,85.6569913 143.68556,86.5079996 146.476311,89.8796828 Z M185.655786,71.8143168 L192.305535,55.7902703 L235.318239,73.6399229 C239.072486,75.1978811 241.2415,79.1537636 240.536356,83.1568091 L239.820231,87.1385839 L232.47517,128.919545 L215.389188,125.909819 L220.312646,97.9413879 L191.776157,113.7129 L183.390302,98.5251862 L211.981072,82.7408038 L185.655786,71.8143168 Z M103.71696,40.2373824 L104.456513,57.5706533 L76.0432671,58.785006 L97.4730368,83.2749086 L84.4165529,94.6993319 L62.9507932,70.1728358 L57.949673,98.1737132 L40.8716575,95.1191088 L49.0561498,49.3603563 C49.771444,45.3612115 53.1664633,42.3942036 57.2253811,42.2210231 L61.246149,42.0411642 L61.3363168,41.9758 L103.71696,40.2373824 Z M161.838155,3.27194826 L192.104824,40.2369789 L178.291207,51.5474574 L160.327329,29.6043227 L154.268381,63.2715157 L136.697231,60.1096121 L142.766468,26.3665075 L118.24002,40.7062765 L109.232678,25.2916494 L150.427675,1.21987397 C154.218286,-0.995121237 159.056796,-0.124957814 161.838155,3.27194826 Z\"/></svg>");
+
+const ICON_FOR = (item) =>
+  item.icon || (item.slug ? ICON(item.slug, item.tint) : LETTER_ICON(item.name || item.label, item.color));
+
+const PERSON = {
+  name: "Sandeep Kumar",
+  shortName: "Sandeep Kumar",
+  title: "AI/ML Engineer | RAGs & Agentic AI | LLMs",
+  availability: "MDS, Monash University · open to AI/ML roles",
+  blurb:
+    "Master of Data Science (Distinction) from Monash University. Recent work spans RAG-based clinical triage, a secured LLM-to-SQL race analyst, and agentic workflows for energy analytics.",
+  tagline: "Building grounded, guarded AI systems.",
+  email: "sandeep.workmail24@gmail.com",
+  mailto: "mailto:sandeep.workmail24@gmail.com",
+  resumeUrl: "https://drive.google.com/file/d/1vYFTEGXL4ScH4i58ntTGSuu8WjU25_cS/view?usp=sharing",
+  contactNote: "Best way to reach me? Email. I'm always open to a conversation.",
+};
+
+const SOCIALS = [
+  { label: "GitHub", href: "https://github.com/SandeepKr24", icon: GITHUB_ICON },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/sandeep-24-au/", icon: LINKEDIN_ICON },
+];
+
+const NAV = [
+  { label: "Home", href: "#hero", id: "hero" },
+  { label: "About", href: "#about", id: "about" },
+  { label: "Education", href: "#education", id: "education" },
+  { label: "Skills", href: "#skills", id: "skills" },
+  { label: "Experience", href: "#experience", id: "experience" },
+  { label: "Projects", href: "#projects", id: "projects" },
+  { label: "Certifications", href: "#achievements", id: "achievements" },
+  { label: "Contact", href: "#contact", id: "contact" },
+];
+
+const ABOUT = {
+  paragraphs: [
+    "AI/ML professional specializing in LLMs and Generative AI, with a Master of Data Science from Monash University (graduated with Distinction). I build RAG pipelines, fine-tune LLMs (LoRA/QLoRA), and design agentic AI systems that solve real-world problems.",
+    "Recent work includes an end-to-end RAG-based clinical triage system using FastAPI and pgvector, and a fine-tuned LLaMA-2 pipeline that improved outage classification accuracy by 28%. I'm comfortable across the full stack, from data pipelines (Spark, Databricks) to model deployment (vLLM, Docker), and enjoy turning research-grade ideas into production-ready tools.",
+  ],
+  panels: [
+    { label: "Areas of expertise", items: ["RAG pipelines", "Agentic AI", "NLP", "LLM evaluation & safety", "Data engineering"] },
+    { label: "Current focus", items: ["Agent guardrails", "MCP tooling", "Vector retrieval quality"] },
+    { label: "Interests", items: ["Open source", "Motorsport data", "Applied research", "Sustainability analytics"] },
+  ],
+};
+
+const EDUCATION = [
+  {
+    dates: "Jul 2024 - Jun 2026",
+    degree: "Master of Data Science",
+    institution: "Monash University",
+    meta: "Melbourne, Australia · Distinction",
+    coursework: ["Machine Learning", "Deep Learning", "Statistical Inference", "Data Wrangling", "Big Data Processing", "Applied Data Science"],
+    achievements: ["Graduated with a Distinction average across coursework."],
+  },
+  {
+    dates: "Jul 2020 - May 2024",
+    degree: "B.Tech, Information Technology",
+    institution: "Manipal University Jaipur",
+    meta: "Jaipur, Rajasthan, India · 8.56 CGPA",
+    coursework: ["Data Structures & Algorithms", "Databases", "Operating Systems", "Computer Networks", "Artificial Intelligence", "Software Engineering"],
+    achievements: ["Co-authored an IEEE I2CT survey on AI in solar energy processes (2022)."],
+  },
+];
+
+const SKILL_GROUPS = [
+  {
+    name: "Languages",
+    items: [
+      { name: "Python", slug: "python", note: "Primary language" },
+      { name: "SQL", slug: "postgresql", note: "Modelling & analytics" },
+    ],
+  },
+  {
+    name: "ML frameworks",
+    items: [
+      { name: "PyTorch", slug: "pytorch", note: "Model training" },
+      { name: "TensorFlow", slug: "tensorflow", note: "Deep learning" },
+      { name: "scikit-learn", slug: "scikitlearn", note: "Classical ML" },
+      { name: "Hugging Face", slug: "huggingface", note: "Transformers, PEFT" },
+      { name: "OpenCV", slug: "opencv", note: "Vision pipelines" },
+    ],
+  },
+  {
+    name: "Generative AI",
+    items: [
+      { name: "LangChain", slug: "langchain", tint: "#8ad6c6", note: "Chains & tool calling" },
+      { name: "CrewAI", slug: "crewai", color: "#ff5a50", note: "Multi-agent crews" },
+      { name: "MCP", slug: "modelcontextprotocol", tint: "#d97757", color: "#d97757", note: "Tool exposure" },
+      { name: "vLLM", slug: "vllm", color: "#8f8ef2", note: "Model serving" },
+      { name: "Ollama", slug: "ollama", tint: "#e8eef7", note: "Local inference" },
+    ],
+  },
+  {
+    name: "Data engineering",
+    items: [
+      { name: "Apache Spark", slug: "apachespark", note: "Distributed processing" },
+      { name: "Databricks", slug: "databricks", note: "Lakehouse pipelines" },
+      { name: "Pandas", slug: "pandas", tint: "#b3a8f0", note: "Analysis & wrangling" },
+      { name: "NumPy", slug: "numpy", note: "Numerical computing" },
+    ],
+  },
+  {
+    name: "Backend & APIs",
+    items: [
+      { name: "FastAPI", slug: "fastapi", note: "Async services" },
+      { name: "Swagger / OpenAPI", slug: "swagger", note: "API contracts" },
+      { name: "Streamlit", slug: "streamlit", note: "Data apps" },
+    ],
+  },
+  {
+    name: "Databases & vectors",
+    items: [
+      { name: "PostgreSQL", slug: "postgresql", note: "Primary datastore" },
+      { name: "pgvector", slug: "postgresql", note: "In-database embeddings" },
+      { name: "MongoDB", slug: "mongodb", note: "Document stores" },
+      { name: "MySQL", slug: "mysql", note: "Relational workloads" },
+      { name: "FAISS", slug: "meta", tint: "#4a91ee", color: "#4267b2", note: "Local vector search" },
+      { name: "Pinecone", icon: PINECONE_ICON, color: "#3ecf8e", note: "Managed vector DB" },
+    ],
+  },
+  {
+    name: "Cloud & tooling",
+    items: [
+      { name: "AWS", icon: AWS_ICON, color: "#ff9900", note: "Hosting & storage" },
+      { name: "Docker", slug: "docker", note: "Compose, reproducible builds" },
+      { name: "Git", slug: "git", note: "Version control" },
+      { name: "Vercel", slug: "vercel", tint: "#e8eef7", note: "Deployment" },
+    ],
+  },
+];
+
+const TECHNIQUES = [
+  { name: "Retrieval-Augmented Generation", note: "Chunking, embeddings, grounding" },
+  { name: "Agentic AI", note: "Multi-step orchestration & tool use" },
+  { name: "LLM fine-tuning", note: "LoRA / QLoRA, PEFT" },
+  { name: "Prompt engineering", note: "Structured, constrained outputs" },
+  { name: "Natural language processing", note: "Classification, extraction, NER" },
+  { name: "Deep learning", note: "CNNs, transformers, sequence models" },
+  { name: "Computer vision", note: "Detection & OCR" },
+  { name: "Reinforcement learning", note: "Policy learning" },
+  { name: "Predictive analytics", note: "Forecasting & regression" },
+  { name: "Feature engineering", note: "Preprocessing & selection" },
+  { name: "LLM evaluation", note: "Groundedness, safety, regression tests" },
+  { name: "Data visualisation", note: "Exploratory & reporting" },
+];
+
+
+const EXPERIENCE = [
+  {
+    role: "Data Science Intern",
+    company: "Celebal Technologies",
+    location: "Jaipur, Rajasthan, India · Remote",
+    period: "Jun 2023 - Jul 2023",
+    summary:
+      "Worked on data science projects that enhanced forecasting capabilities for production reporting.",
+    highlights: [
+      "Conducted thorough data preprocessing and feature engineering to prepare datasets for analysis.",
+      "Leveraged Python and SQL to train models, ensuring high-quality predictive analytics solutions.",
+      "Achieved a 15% increase in forecasting accuracy, driving measurable data-driven results.",
+    ],
+    stack: ["Python", "SQL", "Data Analysis & Visualisation", "Predictive Analytics"],
+  },
+];
+
+const PROJECTS = [
+  {
+    name: "ForzaHelper - AI Companion for Racing Games",
+    year: "2026",
+    description:
+      "Natural-language car search over a 635-car PostgreSQL dataset, served by a FastAPI backend with 9 REST endpoints behind a read-only SQL view.",
+    features: [
+      "LLM kept out of the database: LangChain extracts Pydantic-validated filters, a deterministic builder compiles parameterised SQL, with a rule-based fallback and 132 tests",
+      "Traced slow pages with OpenTelemetry to 11 sequential round trips, not slow SQL; batching cut 14 round trips to 2 (1300ms → 180ms)",
+      "Search that never misleads: reported ±10% tolerance, NULL-aware filters and database-verified alternatives for empty results",
+    ],
+    stack: ["FastAPI", "Supabase / PostgreSQL", "LangChain", "Pydantic", "OpenTelemetry"],
+    links: [
+      { label: "Live demo", href: "https://forzahelper-fh6.vercel.app" },
+      { label: "Source", href: "https://github.com/SandeepKr24/ForzaHelper" },
+    ],
+  },
+  {
+    name: "PitWall - AI Powered Race Analyst",
+    year: "2026",
+    description:
+      "End-to-end natural-language F1 analytics pipeline: ask a question in plain English, get an answer from real telemetry via a guarded LLM-to-SQL agent.",
+    features: [
+      "PostgreSQL ingestion layer handling 1.4M telemetry rows per race with batched inserts and rollback",
+      "LLM-to-SQL agent secured with sqlglot AST validation and per-session Postgres row-level security",
+      "Hardened CLIs with typed errors, token-cost caps and structured logging",
+    ],
+    stack: ["Python", "FastF1", "PostgreSQL", "LLM", "sqlglot"],
+    links: [{ label: "Source", href: "https://github.com/SandeepKr24/PitWall" }],
+  },
+  {
+    name: "FieldMedic - AI Clinical Decision Support",
+    year: "2026",
+    description:
+      "RAG-based clinical triage system that retrieves from a medical knowledge base and returns structured, safety-checked triage recommendations.",
+    features: [
+      "Semantic retrieval with Sentence Transformers, document chunking and vector search over 300+ knowledge chunks",
+      "Agent pipeline combining retrieval, LLM reasoning and explicit safety rules",
+      "Containerised with Docker Compose across 3 services, exposing 4 REST endpoints",
+    ],
+    stack: ["FastAPI", "Streamlit", "PostgreSQL / pgvector", "Gemini", "Docker"],
+    links: [{ label: "Source", href: "https://github.com/SandeepKr24/FieldMedic" }],
+  },
+];
+
+const SECONDARY_PROJECTS = [
+  {
+    name: "Agentic Workflow for Energy Analytics",
+    year: "2025",
+    description:
+      "LangChain agent that queries and analyses energy-consumption datasets, then writes the sustainability report itself. Tool-calling pipelines for dynamic SQL and anomaly detection; 25% higher task-completion accuracy and 60% less manual analysis.",
+    stack: ["Python", "LangChain", "SQL", "Pandas"],
+    links: [],
+  },
+  {
+    name: "Eng2Hing Translator",
+    year: "2023",
+    description:
+      "English-to-Hinglish translation model fine-tuned on a hand-built dataset. Generated 60+ English texts with Hinglish translations, fine-tuned Facebook's mbart-large-50 with checkpoints every 10 steps, and reached 65% accuracy - high for a dataset that small.",
+    stack: ["Python", "mBART-50", "RNN"],
+    links: [{ label: "Source", href: "https://github.com/SandeepKr24/eng_2_hing" }],
+  },
+  {
+    name: "PhotoScraper",
+    year: "2023",
+    description:
+      "Command-line image scraper built on Selenium. Enter any keyword and a count, and it drives the browser to fetch and download that many images automatically.",
+    stack: ["Python", "Selenium"],
+    links: [{ label: "Source", href: "https://github.com/SandeepKr24/PhotoScraper" }],
+  },
+];
+
+
+
+const ACHIEVEMENTS = [
+  {
+    kind: "Publication",
+    title: "A Comprehensive Survey on the Role of Artificial Intelligence in Solar Energy Processes",
+    detail: "Review paper, IEEE 7th International Conference for Convergence in Technology (I2CT), 2022",
+  },
+  { kind: "Academic", title: "Distinction - Master of Data Science", detail: "Monash University, 2024 - 2026" },
+  { kind: "Academic", title: "8.56 CGPA - B.Tech Information Technology", detail: "Manipal University Jaipur, 2020 - 2024" },
+  { kind: "Open source", title: "AI project portfolio on GitHub", detail: "RAG, agentic and data-engineering projects at github.com/SandeepKr24" },
+  {
+    kind: "Certification",
+    title: "Generative AI with Large Language Models",
+    detail: "DeepLearning.AI",
+    href: "https://www.deeplearning.ai/certificates/fae7657e-fdc3-43ef-9721-576388212f7f?usp=sharing",
+  },
+  {
+    kind: "Certification",
+    title: "Generative AI Foundations Certificate Program",
+    detail: "upGrad",
+    href: "https://certificates.upgrad.com/818a15aa-8f28-4528-9c4c-17cea092eafe-Gen-AI-iyvrKsKQ4l3i6eMF.pdf",
+  },
+  {
+    kind: "Certification",
+    title: "Deloitte Australia - Technology Job Simulation",
+    detail: "Forage",
+    href: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9PBTqmSxAf6zZTseP/YPWCiGNTkr6QxcpEu_9PBTqmSxAf6zZTseP_PniBB6tD6b6mkrBLs_1731720551109_completion_certificate.pdf",
+  },
+  {
+    kind: "Certification",
+    title: "Python Programming",
+    detail: "iskima",
+    href: "https://iskima.com/user/certifications/UC-1788761277627",
+  }
+];
+
+class Component extends DCLogic {
+  state = { menuOpen: false, activeId: "hero" };
+
+  componentDidMount() {
+    const accent = this.props.accentColor;
+    if (accent) {
+      document.documentElement.style.setProperty("--accent", accent);
+      document.documentElement.style.setProperty("--accent-soft", accent + "1f");
+    }
+    this.setupScrollSpy();
+    if (this.props.cursorDot !== false) this.setupCursor();
+  }
+
+  componentWillUnmount() {
+    if (this.probeSpy) {
+      window.removeEventListener("scroll", this.probeSpy);
+      window.removeEventListener("resize", this.probeSpy);
+      window.removeEventListener("load", this.probeSpy);
+    }
+    clearTimeout(this.spyTimer);
+    if (this.ro) this.ro.disconnect();
+    this.teardownCursor();
+  }
+
+  setupScrollSpy() {
+    let last = 0;
+    const probe = () => {
+      last = Date.now();
+      const line = 100;
+      const y = window.scrollY;
+      const doc = document.documentElement;
+      let active = NAV[0].id;
+      if (y > 0) {
+        for (const n of NAV) {
+          const el = document.getElementById(n.id);
+          if (!el) continue;
+          const r = el.getBoundingClientRect();
+          if (r.height > 0 && r.top <= line && r.bottom > line) {
+            active = n.id;
+            break;
+          }
+        }
+        if (window.innerHeight + y >= doc.scrollHeight - 4) active = NAV[NAV.length - 1].id;
+      }
+      if (active !== this.state.activeId) this.setState({ activeId: active });
+    };
+    this.probeSpy = () => {
+      if (Date.now() - last >= 80) probe();
+      else {
+        clearTimeout(this.spyTimer);
+        this.spyTimer = setTimeout(probe, 80);
+      }
+    };
+    window.addEventListener("scroll", this.probeSpy, { passive: true });
+    window.addEventListener("resize", this.probeSpy, { passive: true });
+    window.addEventListener("load", this.probeSpy);
+    if (typeof ResizeObserver !== "undefined") {
+      this.ro = new ResizeObserver(this.probeSpy);
+      this.ro.observe(document.body);
+    }
+    probe();
+  }
+
+
+  setupCursor() {
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    if (reduced || !fine) return;
+
+    const mk = (size, bg, border) => {
+      const el = document.createElement("div");
+      el.setAttribute("aria-hidden", "true");
+      Object.assign(el.style, {
+        position: "fixed",
+        top: "0",
+        left: "0",
+        width: size + "px",
+        height: size + "px",
+        marginLeft: -size / 2 + "px",
+        marginTop: -size / 2 + "px",
+        borderRadius: "50%",
+        pointerEvents: "none",
+        zIndex: "300",
+        opacity: "0",
+        transition: "opacity 300ms ease",
+        background: bg,
+        border: border,
+        willChange: "transform",
+      });
+      document.body.appendChild(el);
+      return el;
+    };
+
+    this.dot = mk(7, "var(--accent)", "none");
+    this.ring = mk(26, "transparent", "1px solid rgba(170,162,186,0.35)");
+
+    const t = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+    const d = { x: t.x, y: t.y };
+    const r = { x: t.x, y: t.y };
+    let raf = null;
+    let idle = 0;
+
+    const step = () => {
+      d.x += (t.x - d.x) * 0.28;
+      d.y += (t.y - d.y) * 0.28;
+      r.x += (t.x - r.x) * 0.12;
+      r.y += (t.y - r.y) * 0.12;
+      this.dot.style.transform = `translate3d(${d.x}px, ${d.y}px, 0)`;
+      this.ring.style.transform = `translate3d(${r.x}px, ${r.y}px, 0)`;
+      const settled = Math.abs(t.x - r.x) < 0.2 && Math.abs(t.y - r.y) < 0.2;
+      if (settled && ++idle > 6) {
+        raf = null;
+        return;
+      }
+      if (!settled) idle = 0;
+      raf = requestAnimationFrame(step);
+    };
+
+    this.onMove = (e) => {
+      t.x = e.clientX;
+      t.y = e.clientY;
+      this.dot.style.opacity = "0.9";
+      this.ring.style.opacity = "0.55";
+      idle = 0;
+      if (raf === null) raf = requestAnimationFrame(step);
+    };
+    this.onLeave = () => {
+      this.dot.style.opacity = "0";
+      this.ring.style.opacity = "0";
+    };
+    this.cancelRaf = () => {
+      if (raf !== null) cancelAnimationFrame(raf);
+      raf = null;
+    };
+
+    window.addEventListener("pointermove", this.onMove, { passive: true });
+    window.addEventListener("pointerdown", this.onMove, { passive: true });
+    document.addEventListener("mouseleave", this.onLeave);
+  }
+
+  teardownCursor() {
+    if (this.onMove) {
+      window.removeEventListener("pointermove", this.onMove);
+      window.removeEventListener("pointerdown", this.onMove);
+    }
+    if (this.onLeave) document.removeEventListener("mouseleave", this.onLeave);
+    if (this.cancelRaf) this.cancelRaf();
+    [this.dot, this.ring].forEach((el) => el && el.remove());
+    this.dot = this.ring = null;
+  }
+
+  renderVals() {
+    const { menuOpen, activeId } = this.state;
+    return {
+      person: PERSON,
+      socials: SOCIALS,
+      about: ABOUT,
+      education: EDUCATION,
+      experience: EXPERIENCE,
+      projects: PROJECTS,
+      secondaryProjects: SECONDARY_PROJECTS,
+      achievements: ACHIEVEMENTS,
+      techniques: TECHNIQUES,
+      techniqueCount: String(TECHNIQUES.length).padStart(2, "0"),
+      skillGroups: SKILL_GROUPS.map((g) => ({
+        name: g.name,
+        count: String(g.items.length).padStart(2, "0"),
+        items: g.items.map((t) => ({ name: t.name, note: t.note, icon: ICON_FOR(t), fallback: LETTER_ICON(t.name, t.color) })),
+      })),
+      nav: NAV.map((n) => ({
+        label: n.label,
+        href: n.href,
+        current: activeId === n.id ? "true" : undefined,
+        color: activeId === n.id ? "var(--accent)" : "var(--ink-2)",
+      })),
+      menuOpen,
+      menuGlyph: menuOpen ? "✕" : "≡",
+      toggleMenu: () => this.setState((s) => ({ menuOpen: !s.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      hideIcon: (e) => {
+        const img = e.currentTarget;
+        const fallback = img.getAttribute("data-fallback") || LETTER_ICON(img.getAttribute("data-label"));
+        if (img.src !== fallback) img.src = fallback;
+      },
+      copyright: `© ${new Date().getFullYear()} ${PERSON.name}`,
+    };
+  }
+}
+
+</script>
+</body>
+</html>
