@@ -639,6 +639,22 @@ const EXPERIENCE = [
 
 const PROJECTS = [
   {
+    name: "GridMind - AI Powered Race Analyst",
+    year: "2026",
+    description:
+      "An AI Formula 1 race analyst that answers plain-English questions with tables, charts and sources, served by a FastAPI backend with 15 REST endpoints over a 16-table PostgreSQL schema.",
+    features: [
+      "LLM kept out of decisions that need to be right: it only names races and drivers for Python to resolve, and its SQL is validated with sqlglot and run under a read-only role with a 10s timeout",
+      "On-demand ingestion instead of a season backfill: background jobs fetch a session's FastF1 timing data in 20s to 2 min, with a partial unique index as the lock against duplicate jobs",
+      "AI race reports that can't invent numbers: every figure is checked against facts computed in Python, backed by 1,129 automated tests (889 pytest, 240 Vitest)",
+    ],
+    stack: ["Python", "FastAPI", "PostgreSQL", "Next.js", "pytest"],
+    links: [
+      { label: "Live demo", href: "https://f1gridmind.vercel.app/" },
+      { label: "Source", href: "https://github.com/SandeepKr24/GridMind" },
+    ],
+  },
+  {
     name: "ForzaHelper - AI Companion for Racing Games",
     year: "2026",
     description:
@@ -653,19 +669,6 @@ const PROJECTS = [
       { label: "Live demo", href: "https://forzahelper-fh6.vercel.app" },
       { label: "Source", href: "https://github.com/SandeepKr24/ForzaHelper" },
     ],
-  },
-  {
-    name: "PitWall - AI Powered Race Analyst",
-    year: "2026",
-    description:
-      "End-to-end natural-language F1 analytics pipeline: ask a question in plain English, get an answer from real telemetry via a guarded LLM-to-SQL agent.",
-    features: [
-      "PostgreSQL ingestion layer handling 1.4M telemetry rows per race with batched inserts and rollback",
-      "LLM-to-SQL agent secured with sqlglot AST validation and per-session Postgres row-level security",
-      "Hardened CLIs with typed errors, token-cost caps and structured logging",
-    ],
-    stack: ["Python", "FastF1", "PostgreSQL", "LLM", "sqlglot"],
-    links: [{ label: "Source", href: "https://github.com/SandeepKr24/PitWall" }],
   },
   {
     name: "FieldMedic - AI Clinical Decision Support",
